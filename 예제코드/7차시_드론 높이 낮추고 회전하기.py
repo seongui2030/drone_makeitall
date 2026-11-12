@@ -1,0 +1,27 @@
+from jikko.KiwiDrone import *
+import keyboard
+drone = Kiwi_Serial("COM3")
+while(True):
+
+    if keyboard.is_pressed('q'):
+        drone.cmd_calibration()
+    elif keyboard.is_pressed('w'):
+        drone.cmd_arm()
+    elif keyboard.is_pressed('e'):
+        drone.cmd_take_off()
+    elif keyboard.is_pressed('r'):
+        drone.cmd_landing()
+
+
+    elif keyboard.is_pressed('up'):
+        drone.cmd_up(20)
+        time.sleep(2)
+    elif keyboard.is_pressed('down'):
+        drone.cmd_down(20)
+        time.sleep(2)
+    elif keyboard.is_pressed('left'):
+        drone.cmd_ccw(90)
+        time.sleep(2)
+    elif keyboard.is_pressed('right'):
+        drone.cmd_cw(90)
+        time.sleep(2)

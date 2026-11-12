@@ -1,0 +1,16 @@
+from jikko.KiwiDrone import *
+
+drone = Kiwi_Serial("COM3")
+
+drone.cmd_calibration()
+time.sleep(10)
+
+drone.cmd_arm()
+
+drone.cmd_take_off()
+time.sleep(3)
+
+drone.cmd_landing()
+time.sleep(1)
+
+drone.cmd_disarm()
